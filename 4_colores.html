@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reto 4 - Colores</title>
+  </head>
+  <body>
+    <div
+      id="color1"
+      style="background-color: blue; width: 200px; height: 200px"
+    ></div>
+    <div
+      id="color2"
+      style="background-color: red; width: 200px; height: 200px"
+    ></div>
+    <div
+      id="color3"
+      style="background-color: green; width: 200px; height: 200px"
+    ></div>
+    <div
+      id="color4"
+      style="background-color: yellow; width: 200px; height: 200px"
+    ></div>
+    <div
+      id="key"
+      style="
+        background-color: white;
+        border: 1px solid black;
+        width: 200px;
+        height: 200px;
+      "
+    ></div>
+  </body>
+  <script>
+    let color1 = document.getElementById('color1');
+    let color2 = document.getElementById('color2');
+    let color3 = document.getElementById('color3');
+    let color4 = document.getElementById('color4');
+
+    color1.addEventListener('click', function () {
+      color1.style.backgroundColor = 'black';
+    });
+
+    color2.addEventListener('click', function () {
+      color2.style.backgroundColor = 'black';
+    });
+
+    color3.addEventListener('click', function () {
+      color3.style.backgroundColor = 'black';
+    });
+
+    color4.addEventListener('click', function () {
+      color4.style.backgroundColor = 'black';
+    });
+
+    let colorGlobal = '';
+    let keyColor = document.getElementById('key');
+    document.addEventListener("keydown", function(event){
+      if (event.key === 'a') {
+        keyColor.style.backgroundColor = '#572364';
+        colorGlobal = 'pink';
+      } else if (event.key === 's') {
+        colorGlobal = 'orange';
+        keyColor.style.backgroundColor = 'blue';
+      } else if (event.key === 'd') {
+        colorGlobal = 'blue';
+        keyColor.style.backgroundColor = 'blue';
+      }
+    });
+  </script>
+</html>
