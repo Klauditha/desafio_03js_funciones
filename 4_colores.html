@@ -58,14 +58,14 @@
     let keyColor = document.getElementById('key');
     document.addEventListener("keydown", function(event){
       if (event.key === 'a') {
-        keyColor.style.backgroundColor = '#572364';
-        colorGlobal = 'pink';
+        colorGlobal = 'pink';                         /*color rosado*/
+        keyColor.style.backgroundColor = '#572364';   /*color morado*/
       } else if (event.key === 's') {
-        colorGlobal = 'orange';
-        keyColor.style.backgroundColor = 'blue';
+        colorGlobal = 'orange';                       /*color naranjo*/
+        keyColor.style.backgroundColor = 'gray';      /*color gris*/
       } else if (event.key === 'd') {
-        colorGlobal = 'blue';
-        keyColor.style.backgroundColor = 'blue';
+        colorGlobal = '#B2FFFF';                      /*color celeste*/
+        keyColor.style.backgroundColor = 'pink';      /*color rosado*/
       }
     });
   </script>
