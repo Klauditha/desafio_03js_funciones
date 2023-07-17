@@ -31,6 +31,9 @@
         height: 200px;
       "
     ></div>
+    <div id="newDiv"></div>
+    
+
   </body>
   <script>
     let color1 = document.getElementById('color1');
@@ -55,28 +58,42 @@
     });
 
     let colorGlobal = '';
-    let keyColor = document.getElementById('key');
+    let key = document.getElementById('key');
+    let nuevoItem = document.getElementById('newDiv')
     let nuevoDiv = '';
     document.addEventListener("keydown", function(event){
       if (event.key === 'a') {
         colorGlobal = 'pink';                         /*color rosado*/
-        keyColor.style.backgroundColor = '#572364';   /*color morado*/
+        key.style.backgroundColor = '#572364';   /*color morado*/
+
       } else if (event.key === 's') {
         colorGlobal = 'orange';                       /*color naranjo*/
-        keyColor.style.backgroundColor = 'gray';      /*color gris*/
+        key.style.backgroundColor = 'gray';      /*color gris*/
+
       } else if (event.key === 'd') {
         colorGlobal = '#B2FFFF';                      /*color celeste*/
-        keyColor.style.backgroundColor = 'pink';      /*color rosado*/
+        key.style.backgroundColor = 'pink';      /*color rosado*/
+
       }else if (event.key === 'q') {
         nuevoDiv = document.createElement("div");
         nuevoDiv.style.width = "200px";
         nuevoDiv.style.height = "200px";
-        nuevoDiv.style.backgroundColor = '#B2FFFF'; 
-        key.appendChild(nuevoDiv);
+        nuevoDiv.style.backgroundColor = '#B2FFFF';   /*color celeste*/
+        nuevoItem.appendChild(nuevoDiv);
+
       }else if (event.key === 'w') {
+        nuevoDiv = document.createElement("div");
+        nuevoDiv.style.width = "200px";
+        nuevoDiv.style.height = "200px";
+        nuevoDiv.style.backgroundColor = 'orange';    /*color naranjo*/
+        nuevoItem.appendChild(nuevoDiv);
         
       }else if (event.key === 'e') {
-        
+        nuevoDiv = document.createElement("div");
+        nuevoDiv.style.width = "200px";
+        nuevoDiv.style.height = "200px";
+        nuevoDiv.style.backgroundColor = 'red';   /*color cafe*/
+        nuevoItem.appendChild(nuevoDiv);
       }
       
     });
