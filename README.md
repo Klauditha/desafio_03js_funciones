@@ -1,21 +1,22 @@
-# desafio_03js_funciones
+# Desafio_03js_funciones
 Desafio 3 del modulo de Javascript
 
 ## Reto 1
 Transforma esta declaración de función a una función de expresión. El ejercicio debe quedar en un archivo nombrado `1 funcion.js`
 
+```
 function example(a, b, c){
     return a+b+c
-}
+}```
 
 ## Reto 2
-Transforma la siguiente función a una arrow function de una línea. Este ejercicio debe quedar en un archivo llamado `2 arrow.js` 
+Transforma la siguiente función a una arrow function de una línea. Este ejercicio debe quedar en un archivo llamado `2 arrow.js`
 
 suma = function(a, b){
     return a + b
 }
 ## Reto 3
-Se tiene como base el siguiente ejercicio que cambia el color de un elemento de HTML al hacerle click. 
+Se tiene como base el siguiente ejercicio que cambia el color de un elemento de HTML al hacerle click.
 
 <div id="ele1"> hello </div>
 
@@ -34,7 +35,7 @@ function pintar(){
 
 Tip: revisa en la guía las funciones anónimas.
 
-3.3. Modifica el código anterior para poder pasarle un color como argumento a la función pintar. El color debe ser verde (green) por defecto, al hacer clic en el párrafo se debe pasar amarillo como color. 
+3.3. Modifica el código anterior para poder pasarle un color como argumento a la función pintar. El color debe ser verde (green) por defecto, al hacer clic en el párrafo se debe pasar amarillo como color.
 
 ## Reto 4
 Construye una página web 4_colores.html con las siguientes características
@@ -53,6 +54,7 @@ Construye una página web 4_colores.html con las siguientes características
 
 ● Siguiendo con la lógica del punto anterior, al presionar las teclas q, w o e se deberá crear un div nuevo de las mismas dimensiones antes mencionadas con los colores celeste, naranjo y café respectivamente.
 
+```
 document.addEventListener('keydown', function (event) {
     if (event.key === 'a') {
         /* Cambiar a color 1 */
@@ -60,3 +62,4 @@ document.addEventListener('keydown', function (event) {
         /* Cambiar a color 2 */
     }
 })
+```
