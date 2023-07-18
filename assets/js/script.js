@@ -1,12 +1,18 @@
-let ele1  = document.getElementById("ele1");
-/*Punto 3.2 */
-ele1.addEventListener("click", function(){
-    ele1.style.backgroundColor = "yellow";
-});
-/*Punto 3.3*/
-ele1.style.backgroundColor = "green";
-function pintar(color){
+/*Funcion original*/
+/*
+function pintar(){
+    ele.style.backgroundColor = 'yellow';
+}
+*/
+
+const ele1  = document.getElementById("ele1");
+const color = "yellow";
+
+function pintar(color = "green"){
     ele1.style.backgroundColor = color;
 }
-pintar("yellow");
+
+ele1.addEventListener("click", function(){
+    pintar(color);
+});
 
