@@ -8,7 +8,7 @@ let colorGlobal = '';
 let nuevoDiv = '';
 let detalle = document.getElementById('detalle');
 
-const cambiaColorFondo = (cuadrado) =>
+const cambiaColorFondoClick = (cuadrado) =>
   (cuadrado.style.backgroundColor = 'black');
 
 color1.addEventListener('click', function () {
@@ -17,19 +17,24 @@ color1.addEventListener('click', function () {
 });
 
 color2.addEventListener('click', function () {
-  cambiaColorFondo(color2);
+  cambiaColorFondoClick(color2);
   detalle.innerHTML = 'Se ha hecho clic en color2';
 });
 
 color3.addEventListener('click', function () {
-  cambiaColorFondo(color3);
+  cambiaColorFondoClick(color3);
   detalle.innerHTML = 'Se ha hecho clic en color3';
 });
 
 color4.addEventListener('click', function () {
-  cambiaColorFondo(color4);
+  cambiaColorFondoClick(color4);
   detalle.innerHTML = 'Se ha hecho clic en color4';
 });
+
+const cambiaColorFondoTecla = (tecla, color) => {
+  colorGlobal = color;
+  detalle.innerHTML = `Se presionado la tecla ${tecla}. Color Global es: ${color}`;
+};
 
 /*Se asume que solo debe existir un solo div con el id KEY*/
 function crearDiv(color, letra) {
@@ -50,35 +55,11 @@ function crearDiv(color, letra) {
 
 document.addEventListener('keydown', function (event) {
   if (event.key === 'a' || event.key === 'A') {
-    colorGlobal = 'pink';
-    key.style.backgroundColor = '#572364';
-    detalle.innerHTML =
-      'Se presionado la tecla ' +
-      event.key +
-      '. Color Global es: ' +
-      colorGlobal +
-      '. Color del div key es: ' +
-      key.style.backgroundColor;
+    cambiaColorFondoTecla(event.key ,'pink');
   } else if (event.key === 's' || event.key === 'S') {
-    colorGlobal = 'orange';
-    key.style.backgroundColor = 'gray';
-    detalle.innerHTML =
-      'Se presionado la tecla ' +
-      event.key +
-      '. Color Global es: ' +
-      colorGlobal +
-      '. Color del div key es: ' +
-      key.style.backgroundColor;
+    cambiaColorFondoTecla(event.key ,'orange');
   } else if (event.key === 'd' || event.key === 'D') {
-    colorGlobal = '#B2FFFF';
-    key.style.backgroundColor = 'pink';
-    detalle.innerHTML =
-      'Se presionado la tecla ' +
-      event.key +
-      '. Color Global es: ' +
-      colorGlobal +
-      '. Color del div key es: ' +
-      key.style.backgroundColor;
+    cambiaColorFondoTecla(event.key,'#B2FFFF');
   } else if (event.key === 'q' || event.key === 'Q') {
     crearDiv('#B2FFFF', event.key);
   } else if (event.key === 'w' || event.key === 'W') {
@@ -86,4 +67,8 @@ document.addEventListener('keydown', function (event) {
   } else if (event.key === 'e' || event.key === 'E') {
     crearDiv('brown', event.key);
   }
+  else{
+    colorGlobal='';  
+  }
+  colorGlobal?'':key.style.backgroundColor = colorGlobal;
 });
